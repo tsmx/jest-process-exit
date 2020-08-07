@@ -1,0 +1,23 @@
+{
+  "name": "jest-process-exit",
+  "version": "1.0.0",
+  "description": "Example on how to test process.exit with Jest.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "Jest",
+    "process.exit",
+    "testing"
+  ],
+  "author": "tsmx",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsmx/jest-process-exit.git"
+  },
+  "devDependencies": {
+    "jest": "^26.2.2"
+  }
+}
