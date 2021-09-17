@@ -36,7 +36,7 @@ To get the test case up and running we have to wrap our functions execution in a
 So we have our final test case looking like that:
 
 ```javascript
-it('tests myFunc with process.exit', async (done) => {
+it('tests myFunc with process.exit', async () => {
     const mockExit = jest.spyOn(process, 'exit')
         .mockImplementation((number) => { throw new Error('process.exit: ' + number); });
     expect(() => {
@@ -44,7 +44,6 @@ it('tests myFunc with process.exit', async (done) => {
     }).toThrow();
     expect(mockExit).toHaveBeenCalledWith(-1);
     mockExit.mockRestore();
-    done();
 });
 ```
 
