@@ -16,7 +16,7 @@ describe('jest-process-exit test suite', () => {
         console.log = originalConsoleLog;
     });
 
-    it('tests myFunc with process.exit', async (done) => {
+    it('tests myFunc with process.exit', async () => {
         const mockExit = jest.spyOn(process, 'exit')
             .mockImplementation((number) => { throw new Error('process.exit: ' + number); });
         expect(() => {
@@ -26,15 +26,13 @@ describe('jest-process-exit test suite', () => {
         mockExit.mockRestore();
         expect(testOutput.length).toBe(1);
         expect(testOutput[0]).toBe('before');
-        done();
     });
 
-    it('tests myFunc without process.exit', async (done) => {
+    it('tests myFunc without process.exit', async () => {
         myFunc(false);
         expect(testOutput.length).toBe(2);
         expect(testOutput[0]).toBe('before');
         expect(testOutput[1]).toBe('after');
-        done();
     });
 
 });
